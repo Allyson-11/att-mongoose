@@ -10,3 +10,15 @@ const criarPaciente = async (dados) => {
         + error.message);
      }
     };
+
+const listarPacientes = async () => {
+    try {
+        return await Paciente.find().sport(
+            { createdAt: -1 });
+    } catch (error) {
+        throw new Error('Erro ao listar pacientes: '
+        +error.message)
+    }
+};
+
+module.exports = {criarPaciente, listarPacientes };
